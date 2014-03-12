@@ -35,7 +35,7 @@ define(function(require) {
             this.$('.reveal-widget-slider').css('margin-left', (direction == 'right') ? -imageWidth : 0);
 console.log('slider margin ' + this.$('.reveal-widget-slider').css('margin-left'));
             this.$('.reveal-widget-item').addClass('reveal-' + direction);
-
+console.log('Hi');
             //this.$('.reveal-widget-control-left').addClass('reveal-' + direction);
             //this.$('.reveal-widget-control-right').addClass('reveal-' + direction);
 
