@@ -33,6 +33,10 @@ define(function(require) {
             // Initialise the directional arrows
             this.$('.reveal-widget-item').addClass('reveal-' + this.model.get('_direction'));
             this.$('.reveal-widget-control').addClass('reveal-' + direction);
+            //DG changes
+            this.$('.reveal-image').addClass('reveal-' + direction);
+            this.$('.reveal-widget-item-text').addClass('reveal-' + direction);
+            // end
             this.$('.reveal-widget-icon').addClass('icon-arrow-' + this.getOppositeDirection(direction));
 
             this.model.set('_direction', direction);
@@ -84,6 +88,7 @@ define(function(require) {
             }
         },
 
+
         resizeControl: function() {           
             var imageWidth = this.$('.reveal-widget').width();
             var controlWidth = this.$('.reveal-widget-control').width();
@@ -93,7 +98,8 @@ define(function(require) {
             var sliderAnimation = {};
 
             if (this.model.get('_revealed')) {
-                this.$('.reveal-widget-control').css(direction, imageWidth - controlWidth);
+                // removed animation on control
+               // this.$('.reveal-widget-control').css(direction, imageWidth - controlWidth);
                 this.$('.reveal-widget-slider').css('margin-left', (direction == 'left') ? -imageWidth : 0);
                 sliderAnimation['margin-left'] = (direction == 'left') ? 0 :  -imageWidth
                 this.$('.reveal-widget-slider').animate(sliderAnimation);
@@ -138,6 +144,7 @@ define(function(require) {
 
             // Define the animations and new icon styles
             if (!this.model.get('_revealed')) {
+                // reveal second
                 this.model.set('_revealed', true);
                 this.$('.reveal-widget').addClass('reveal-showing');
 
@@ -149,6 +156,7 @@ define(function(require) {
 
                 this.setCompletionStatus();
             } else {
+                //show first 
                 this.model.set('_revealed', false);
                 this.$('.reveal-widget').removeClass('reveal-showing');
 
@@ -161,7 +169,8 @@ define(function(require) {
 
             // Change the UI to handle the new state
             this.$('.reveal-widget-slider').animate(sliderAnimation);
-            this.$('.reveal-widget-control').animate(controlAnimation);
+            // removed animation on control
+            //this.$('.reveal-widget-control').animate(controlAnimation);
             this.$('.reveal-widget-icon').removeClass(classToRemove).addClass(classToAdd);
 
             this.setControlText(this.model.get('_revealed'));
