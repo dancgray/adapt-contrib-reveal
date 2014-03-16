@@ -36,6 +36,7 @@ define(function(require) {
             //DG changes
             this.$('.reveal-image').addClass('reveal-' + direction);
             this.$('.reveal-widget-item-text').addClass('reveal-' + direction);
+            
             // end
             this.$('.reveal-widget-icon').addClass('icon-arrow-' + this.getOppositeDirection(direction));
 
