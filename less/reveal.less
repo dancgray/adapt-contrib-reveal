@@ -73,7 +73,7 @@
     position: absolute;
     width: 80%;
 
- /*   &.reveal-left {
+   &.reveal-left {
         left: 0;
         top: 0;
     }
@@ -81,7 +81,7 @@
     &.reveal-right {
         right: 0;
         top: 0;
-    } */
+    } 
 }
 
 .reveal-widget-item-text span {
@@ -92,7 +92,6 @@
   border-width: 1px;
   color: #FFFFFF;
   display: block;
-  left: 60px;
   margin: 0;
   max-height: 265px;
   max-width: 390px;
@@ -100,5 +99,13 @@
   position: absolute;
   overflow: visible;
   top: 20px;
+
+     &.reveal-left {
+        left: 60px;
+    }
+
+    &.reveal-right {
+        right: 60px;
+    }
 }
 
